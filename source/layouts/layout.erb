@@ -14,6 +14,18 @@
     <%= javascript_include_tag "site" %>
   </head>
   <body>
-    <%= yield %>
+	  <nav>
+		  <div class="nav-wrapper">
+			  <a href="index.html" class="brand-logo">Beck Peters</a>
+			  <ul id="nav-mobile" class="right hide-onmed-and-down">
+				  <li><a href="index.html">Home</a></li>
+			  </ul>
+		  </div>
+	  </nav>
+	  <ul id="slide-out" class="side-nav">
+		  <li><a href="#">Home</a></li>
+	  </ul>
+	  <a href="#" data-activates="slide-out" class="button-collapse" id="sidenav-button"><i class="material-icons">menu</i></a> 
+    	<%= yield %>
   </body>
 </html>

@@ -1,1 +1,4 @@
-// This is where it all goes :)
+$("#sidenav-button").sideNav({
+	closeOnClick: "true",
+	draggable: "true"
+});
