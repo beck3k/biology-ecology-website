@@ -1,4 +1,6 @@
-$("#sidenav-button").sideNav({
-	closeOnClick: "true",
-	draggable: "true"
+$(document).ready(function(){
+	$('.button-collapse').sideNav({
+		closeOnClick: true,
+		draggable: true
+	});
 });
