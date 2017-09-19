@@ -9,20 +9,25 @@ title: Weather
 <script>
 function getContent(title){
 	var remoteContent = $('iframe').contents(),
-	remotePhrase = $(remoteContent).find(title);	
+	remotePhrase = $(remoteContent).find("i." + title);	
 	
 	//remoteContent.find('html').replaceWith(remotePhrase);
 	return remotePhrase;
 }
-$('span').each(function(index){
-	var target = $(this).data('target');
-	var text = this.innerHTML;
-	var tooltip = document.createElement("a");
-	tooltip.innerHTML = text;
-	$(tooltip).addClass('tooltip');
-	$(tooltip).attr('data-position', 'bottom');
-	$(tooltip).attr('data-delay', '50');
-	$(tooltip).attr('data-tooltip', getContent(target));	
-	$(this).replaceWith(tooltip);
-});
+
+function createHovers(){
+	$('span').each(function(index){
+		var target = $(this).data('target');
+		var text = this.innerHTML;
+		var tooltip = document.createElement("a");
+		tooltip.innerHTML = text;
+		$(tooltip).addClass('tooltipped');
+		$(tooltip).attr('data-position', 'bottom');
+		$(tooltip).attr('data-delay', '50');
+		$(tooltip).attr('data-tooltip', getContent(target).html());	
+		$(this).replaceWith(tooltip);
+	});
+	$('.tooltipped').tooltip({delay: 50});
+}
+
 </script>
