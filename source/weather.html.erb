@@ -30,4 +30,18 @@ function createHovers(){
 	$('.tooltipped').tooltip({delay: 50});
 }
 
+function openModal(content, iframe){
+	$('#define-modal').modal('open').find('.replace-me').html($(iframe).contents().find('p').html().find('i').each(function(){
+			
+	}));
+}
+$('document').ready(function(){
+	$('.modal').modal();
+});
 </script>
+
+<div id="define-modal" class="modal bottom-sheet">
+	<div class="modal-content">
+		<div class="replace-me"></div>
+	</div>
+</div>
