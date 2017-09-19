@@ -24,24 +24,31 @@ function createHovers(){
 		$(tooltip).addClass('tooltipped');
 		$(tooltip).attr('data-position', 'bottom');
 		$(tooltip).attr('data-delay', '50');
-		$(tooltip).attr('data-tooltip', getContent(target).html());	
+		$(tooltip).attr('data-tooltip', getContent(target).html());
+		$(tooltip).attr('onclick', 'openModal("' + target + '", "iframe")');	
 		$(this).replaceWith(tooltip);
 	});
 	$('.tooltipped').tooltip({delay: 50});
 }
 
-function openModal(content, iframe){
-	$('#define-modal').modal('open').find('.replace-me').html($(iframe).contents().find('p').html().find('i').each(function(){
-			
-	}));
+function openModal(title, iframe){
+	$('#define-modal').find('.modal-content').append('<div class="replace-me"></div>');
+	$('#define-modal').modal('open').find('.replace-me').html($(iframe).contents().find('p').html());
+	$('#define-modal').find('i.' + title).each(function(){
+		$(this).css('background-color', 'yellow');
+	});
 }
 $('document').ready(function(){
-	$('.modal').modal();
+	$('.modal').modal({
+		complete: function(){
+			$('#define-modal').find('.modal-content').html('');
+		}
+	});
 });
 </script>
 
 <div id="define-modal" class="modal bottom-sheet">
 	<div class="modal-content">
-		<div class="replace-me"></div>
+		
 	</div>
 </div>
