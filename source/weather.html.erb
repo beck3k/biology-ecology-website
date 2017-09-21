@@ -4,9 +4,13 @@ title: Weather
 
 <p>Weather is a thing on earth.  Weather is important and changes daily.  Weather includes things such as rainfall or temperature. Weather changes constantly and is in a climate.  Weather is different from <span data-target="climate">climate</span> because of the factors and things.  the  factors in climate are relatively static, but the weather in a climate changes.  Weather does many things.  Weather can have dramatic problems to things.  If the climate factors are near the coast, the weather could change to large storms destroying the area.  Storms in weather include things like Hurricanes or Monsoons.  It is possible that mountains have an affect on weather.  Mountains can be dangers with the weather but can also protect people from weather.  Weather is both good and bad.  Weather does things.  Why do we have weather.  We have weather because of the arrangement of things on the earth.  </p>
 
-<iframe src="/climate.html"></iframe>
 
+<div class="iframes"></div>
 <script>
+var websites = [
+	"climate"
+];
+
 function getContent(title){
 	var remoteContent = $('iframe').contents(),
 	remotePhrase = $(remoteContent).find("i." + title);	
@@ -37,18 +41,33 @@ function openModal(title, iframe){
 	$('#define-modal').find('i.' + title).each(function(){
 		$(this).css('background-color', 'yellow');
 	});
+	$('#define-modal').find('.modal-footer').html('<div class="modal-footer"><a class="btn btn-floating pulse tooltipped" href="' + $('iframe').attr('src') + '" data-tooltip="Go there" data-position="top"><i class="material-icons">chevron_right</i></a></div>');
+	$('.tooltipped').tooltip({delay: 50});
 }
 $('document').ready(function(){
+	$(document).find('body').append('<div id="define-modal" class="modal bottom-sheet"><div class="modal-content"></div><div class="modal-footer"></div></div>');
 	$('.modal').modal({
 		complete: function(){
 			$('#define-modal').find('.modal-content').html('');
+			$('#define-modal').find('.modal-footer').html('<div class="modal-footer"></div>');
 		}
 	});
+	var url = new URLSearchParams(window.location.search);
+	var highlight = url.get("highlight");
+	if(highlight != null){
+		$('i.' + highlight).css('background-color', 'yellow');	
+	}else{
+		console.log("No Highlight");
+	}
 });
+
+
+for(site in websites){
+	var iframe = document.createElement('iframe');
+	//$(document).find('.iframes').append('<iframe></iframe>').attr('src', '/' + websites[site] + '.html');
+	$(document).find('.iframes').append(iframe);
+	console.log(site);
+}
 </script>
 
-<div id="define-modal" class="modal bottom-sheet">
-	<div class="modal-content">
-		
-	</div>
-</div>
+

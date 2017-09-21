@@ -16,11 +16,11 @@
     <%= javascript_include_tag "site" %>
   </head>
   <body>
-	  <nav>
+	  <nav class="nav-extended black"> 
 		  <div class="nav-wrapper">
 			  <a href="index.html" class="brand-logo">Beck Peters</a>
 			  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-			  <ul id="nav-mobile" class="right hide-on-.i3/med-and-down">
+			  <ul id="nav-mobile" class="right hide-on-med-and-down">
 				  <li><a href="index.html">Home</a></li>
 			  </ul>
 		  </div>
@@ -28,7 +28,9 @@
 	  <ul id="slide-out" class="side-nav">
 		  <li><a href="#">Home</a></li>
 	  </ul>
-	   
+	  <div class="parallax-container">
+		<div class="parallax"><img></div>
+	  </div>
     	<%= yield %>
   </body>
 </html>
