@@ -1,7 +1,12 @@
 var websites = [
 	"climate",
 	"weather",
-	"niche"
+	"niche",
+	"predation",
+	"symbiosis",
+	"sucession",
+	"biome",
+	"biocube"
 ];
 var locationName;
 function getContent(title){
@@ -91,9 +96,15 @@ $('document').ready(function(){
 	}else{
 		console.log("No Highlight");
 	}
+	var name = url.get("teacher");
+	if(name != 1){
+		$('.brand-logo').html('');
+	}
 	checkWebsite();
 	$(document).find('.loading').append('<div class="preloader-wrapper big active"><div class="spinner-layer spinner-blue"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"> <div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-red"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-yellow"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-green"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>');
 }
+$('.parallax').parallax();
+	
 });
 
 if(self == top){
