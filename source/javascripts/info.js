@@ -126,7 +126,7 @@ $('document').ready(function(){
 		case 'symbiosis':
 			image = "http://w3.marietta.edu/~biol/biomes/images/oceans/clownfish.jpg";
 			break;
-		case 'succession':
+		case 'sucession':
 			image = "https://teara.govt.nz/files/large_images/11898-enz_0.jpg";
 			break;
 		
