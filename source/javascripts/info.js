@@ -111,7 +111,7 @@ $('document').ready(function(){
 	}
 	checkWebsite();
 	$(document).find('.loading').append('<div class="preloader-wrapper big active"><div class="spinner-layer spinner-blue"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"> <div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-red"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-yellow"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-green"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>');
-	var img = $(document).createElement('img');
+	var img = document.createElement('img');
 	switch(locationName){
 		case 'climate':
 			img.attr('src', 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjxl4fmp8PWAhUExFQKHaYFBWkQjRwIBw&url=https%3A%2F%2Fwww.nasa.gov%2Fpress-release%2Fnasa-releases-detailed-global-climate-change-projections&psig=AFQjCNEJPMsuzGFQYVMOcwdMm-P701PvyA&ust=1506531087769842');
