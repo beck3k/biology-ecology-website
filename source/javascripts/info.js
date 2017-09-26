@@ -117,7 +117,7 @@ $('document').ready(function(){
 		case 'climate':
 			image = "https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/15-115.jpg?itok=-S4q6bvE";
 			break;
-		case 'weather';
+		case 'weather':
 			image = "https://http://images.nationalgeographic.com/wpf/media-live/photos/000/475/cache/science-extreme-weather-haboob-dust-storm_47509_600x450.jpg";
 			break;
 		case 'predation':
