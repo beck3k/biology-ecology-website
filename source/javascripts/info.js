@@ -117,7 +117,7 @@ $('document').ready(function(){
 			img.attr('src', 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjxl4fmp8PWAhUExFQKHaYFBWkQjRwIBw&url=https%3A%2F%2Fwww.nasa.gov%2Fpress-release%2Fnasa-releases-detailed-global-climate-change-projections&psig=AFQjCNEJPMsuzGFQYVMOcwdMm-P701PvyA&ust=1506531087769842');
 			$('.parallax').append(img);
 			break;
-		case default:
+		default:
 			break;
 	}
 }
