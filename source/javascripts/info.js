@@ -124,7 +124,7 @@ $('document').ready(function(){
 			image = "http://www.nature.com/scitable/content/ne0000/ne0000/ne0000/ne0000/13285949/stevens_banner_popdyn_ksm.jpg";
 			break;
 		case 'symbiosis':
-			image = "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwii87jCqsPWAhVWwGMKHXYbBf0QjRwIBw&url=http%3A%2F%2Fw3.marietta.edu%2F~biol%2Fbiomes%2Fsymbiosis.htm&psig=AFQjCNF4nNhNjG-YNiPuYd7uCmGHzbvTRQ&ust=1506531799829898";
+			image = "http://w3.marietta.edu/~biol/biomes/images/oceans/clownfish.jpg";
 			break;
 		case 'succession':
 			image = "https://teara.govt.nz/files/large_images/11898-enz_0.jpg";
