@@ -23,6 +23,7 @@ function getContent(title){
 	});
 */
 	var iframeContent = $('iframe.' + title).contents();
+	console.log(iframeContent);
 	var phrase = $(iframeContent).find('i.' + title);
 	//remoteContent.find('html').replaceWith(remotePhrase);
 	return phrase;	
@@ -31,8 +32,9 @@ function getContent(title){
 function createHovers(website){
 	$('span').each(function(index){
 		var target = $(this).data('target');
-		console.log(target);
 		var text = this.innerHTML;
+		console.log(target);
+		if(text == website && target != undefined){
 		var tooltip = document.createElement("a");
 		tooltip.innerHTML = text;
 		$(tooltip).addClass('tooltipped');
@@ -53,8 +55,9 @@ function createHovers(website){
 		$(tooltip).attr('data-tooltip', targetText);
 		$(tooltip).attr('onclick', 'openModal("' + text + '", "iframe.' + target + '")');	
 		$(this).replaceWith(tooltip);
+		$('.tooltipped').tooltip({delay: 50, html: true});
+		}
 	});
-	$('.tooltipped').tooltip({delay: 50, html: true});
 	for(site in websites){
 		websiteName = websites[site];
 		if(websiteName == website){
@@ -80,7 +83,9 @@ $('document').ready(function(){
 	locationName = locationName.replace('/', '');
 	locationName = locationName.replace('.html', '');
 	if(self != top){
-		parent.createHovers(locationName);
+		$('document').ready(function(){
+			parent.createHovers(locationName);
+		});
 	}else{
 	$(document).find('body').append('<div id="define-modal" class="modal bottom-sheet"><div class="modal-content"></div><div class="modal-footer"></div></div>');
 	$('.modal').modal({
