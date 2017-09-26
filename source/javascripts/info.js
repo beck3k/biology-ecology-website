@@ -117,6 +117,19 @@ $('document').ready(function(){
 		case 'climate':
 			image = "https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/15-115.jpg?itok=-S4q6bvE";
 			break;
+		case 'weather';
+			image = "https://http://images.nationalgeographic.com/wpf/media-live/photos/000/475/cache/science-extreme-weather-haboob-dust-storm_47509_600x450.jpg";
+			break;
+		case 'predation':
+			image = "http://www.nature.com/scitable/content/ne0000/ne0000/ne0000/ne0000/13285949/stevens_banner_popdyn_ksm.jpg";
+			break;
+		case 'symbiosis':
+			image = "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwii87jCqsPWAhVWwGMKHXYbBf0QjRwIBw&url=http%3A%2F%2Fw3.marietta.edu%2F~biol%2Fbiomes%2Fsymbiosis.htm&psig=AFQjCNF4nNhNjG-YNiPuYd7uCmGHzbvTRQ&ust=1506531799829898";
+			break;
+		case 'succession':
+			image = "https://teara.govt.nz/files/large_images/11898-enz_0.jpg";
+			break;
+		
 		default:
 			break;
 	}
