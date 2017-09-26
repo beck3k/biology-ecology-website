@@ -23,18 +23,21 @@ function getContent(title){
 	});
 */
 	var iframeContent = $('iframe.' + title).contents();
-	console.log(iframeContent);
 	var phrase = $(iframeContent).find('i.' + title);
 	//remoteContent.find('html').replaceWith(remotePhrase);
 	return phrase;	
 }
 
 function createHovers(website){
+	console.log('Website: ' + website);
+	var match = false;
 	$('span').each(function(index){
 		var target = $(this).data('target');
 		var text = this.innerHTML;
-		console.log(target);
-		if(text == website && target != undefined){
+		console.log('Target: ' + target);
+		console.log('Span Index:' + index);
+		if(target != undefined && target == website){
+		match = true;
 		var tooltip = document.createElement("a");
 		tooltip.innerHTML = text;
 		$(tooltip).addClass('tooltipped');
@@ -42,7 +45,7 @@ function createHovers(website){
 		$(tooltip).attr('data-delay', '50');
 
 		var targetText = getContent(target).html();
-		console.log(targetText);
+			console.log(target + ' Text: ' + targetText);
 		/*		
 		var content = getContent(target);
 		for(i in content){
@@ -53,10 +56,11 @@ function createHovers(website){
 		//var elementText = document.createElement('p');
 		//$(elementText).html("<p>" + targetText + "</p>");
 		$(tooltip).attr('data-tooltip', targetText);
-		$(tooltip).attr('onclick', 'openModal("' + text + '", "iframe.' + target + '")');	
+		$(tooltip).attr('onclick', 'openModal("' + target + '", "iframe.' + target + '")');	
 		$(this).replaceWith(tooltip);
 		$('.tooltipped').tooltip({delay: 50, html: true});
 		}
+		console.log('Match Found: '  + match);
 	});
 	for(site in websites){
 		websiteName = websites[site];
@@ -107,6 +111,12 @@ $('document').ready(function(){
 	}
 	checkWebsite();
 	$(document).find('.loading').append('<div class="preloader-wrapper big active"><div class="spinner-layer spinner-blue"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"> <div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-red"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-yellow"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-green"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>');
+	switch(locationName){
+		case 'climate':
+			var img = $(document).add('img').
+			img.attr('src', 
+			$('.parallax').append(
+	}
 }
 $('.parallax').parallax();
 	
@@ -117,7 +127,7 @@ for(site in websites){
 	var iframe = document.createElement('iframe');
 	//$(document).find('.iframes').append('<iframe></iframe>').attr('src', '/' + websites[site] + '.html');
 	siteName = websites[site];
-	$(iframe).attr('src', '/' + siteName + '.html');
+	$(iframe).attr('src', siteName + '.html');
 	$(iframe).addClass(siteName);
 	$(document).find('.iframes').append(iframe);
 }
