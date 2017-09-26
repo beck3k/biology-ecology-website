@@ -129,7 +129,12 @@ $('document').ready(function(){
 		case 'sucession':
 			image = "https://teara.govt.nz/files/large_images/11898-enz_0.jpg";
 			break;
-		
+		case 'biome':
+			image = "http://w3.marietta.edu/~biol/biomes/images/alpine/highsierra.jpg";
+			break;
+		case 'niche':
+			image = "https://www.wired.com/images_blogs/photos/uncategorized/2007/10/16/niche.jpg";
+			break;
 		default:
 			break;
 	}
